@@ -24,4 +24,26 @@ public class TwoSumSolution
 
         return [];
     }
+
+    /// <summary>
+    /// Сложность: O(n^2) по времени, O(1) по памяти.
+    /// Двойной вложенный цикл проверяет все пары элементов. Внешний цикл — n итераций, внутренний — до n-1,
+    /// итого O(n^2). Пространство — константное, без дополнительных структур.
+    ///
+    /// Время выполнения на Leetcode: 62ms
+    /// </summary>
+    public int[] TwoSumBruteForce(int[] nums, int target) {
+        for (var i = 0; i < nums.Length; i++)
+        {
+            for (var j = i + 1; j < nums.Length; j++)
+            {
+                if (nums[i] + nums[j] == target)
+                {
+                    return [i, j];
+                }
+            }
+        }
+
+        return [];
+    }
 }
